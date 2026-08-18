@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: stockflow-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=StockFlow WMS
+      - DATABASE_URL=postgresql://stockflow_user:stockflow_pass@postgres:5432/stockflow_db
+      - JWT_SECRET=stockflow-warehouse-jwt-secret-key-2026-secure
+      - JWT_ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=1440
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: stockflow-frontend
+    ports:
+      - "5173:80"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: stockflow-postgres
+    environment:
+      POSTGRES_USER: stockflow_user
+      POSTGRES_PASSWORD: stockflow_pass
+      POSTGRES_DB: stockflow_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

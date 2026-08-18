@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="112" fill="url(#brandGrad)" />
+  
+  <!-- Subtle inner border -->
+  <rect x="8" y="8" width="496" height="496" rx="104" fill="none" stroke="#38bdf8" stroke-width="3" stroke-opacity="0.3" />
+
+  <!-- Warehouse / Box Icon Graphic -->
+  <g filter="url(#shadow)" transform="translate(106, 106)">
+    <!-- Roof / Warehouse structure -->
+    <path d="M150 20 L280 110 V260 H20 V110 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="12" stroke-linejoin="round" />
+    <path d="M150 10 L290 110 H10 Z" fill="url(#boxGrad)" />
+
+    <!-- Isometric Boxes inside -->
+    <!-- Center Box -->
+    <g transform="translate(90, 130)">
+      <polygon points="60,0 120,30 60,60 0,30" fill="#38bdf8" />
+      <polygon points="0,30 60,60 60,120 0,90" fill="#0284c7" />
+      <polygon points="120,30 60,60 60,120 120,90" fill="#0369a1" />
+    </g>
+
+    <!-- Left Box -->
+    <g transform="translate(30, 170) scale(0.7)">
+      <polygon points="60,0 120,30 60,60 0,30" fill="#7dd3fc" />
+      <polygon points="0,30 60,60 60,120 0,90" fill="#0284c7" />
+      <polygon points="120,30 60,60 60,120 120,90" fill="#075985" />
+    </g>
+
+    <!-- Right Box -->
+    <g transform="translate(160, 170) scale(0.7)">
+      <polygon points="60,0 120,30 60,60 0,30" fill="#7dd3fc" />
+      <polygon points="0,30 60,60 60,120 0,90" fill="#0284c7" />
+      <polygon points="120,30 60,60 60,120 120,90" fill="#075985" />
+    </g>
+  </g>
+
+  <!-- Accent glow badge -->
+  <circle cx="410" cy="102" r="28" fill="#10b981" />
+  <path d="M400 102 L407 109 L422 94" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

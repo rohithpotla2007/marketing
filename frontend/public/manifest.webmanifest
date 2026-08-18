@@ -1,0 +1,46 @@
+{
+  "name": "StockFlow WMS - Warehouse Operating System",
+  "short_name": "StockFlow",
+  "description": "Enterprise Warehouse Management System for inventory tracking, atomic restocking, and order fulfillment.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020617",
+  "theme_color": "#0284c7",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "url": "/",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Inventory",
+      "short_name": "Inventory",
+      "url": "/inventory",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Order Placement",
+      "short_name": "Place Order",
+      "url": "/order-placement",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Restocking",
+      "short_name": "Restock",
+      "url": "/restocking",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    }
+  ]
+}
